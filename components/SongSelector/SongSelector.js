@@ -6,7 +6,7 @@ import SongContent from "../SongContent/page";
 
 const songCache = {};
 
-export default function SongSelector({ showId, user }) {
+export default function SongSelector({ showId, user, spexId }) {
   const [songs, setSongs] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -21,7 +21,7 @@ export default function SongSelector({ showId, user }) {
       const supabase = createClient();
       const response = await supabase
         .from("song")
-        .select("id, name, lyrics, show_warning")
+        .select("id, name, lyrics, show_warning, number")
         .eq("show_id", showId)
         .order("id", { ascending: true });
 
@@ -44,7 +44,7 @@ export default function SongSelector({ showId, user }) {
               key={song.id}
               song={song}
               user={user}
-              songNr={index + 1}
+              spexId={spexId}
             ></SongContent>
           </>
         ))}

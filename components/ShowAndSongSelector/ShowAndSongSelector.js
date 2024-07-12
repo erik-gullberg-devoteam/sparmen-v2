@@ -3,7 +3,12 @@ import { useState } from "react";
 import SongSelector from "../SongSelector/SongSelector";
 import pageStyle from "@/app/spex/[id]/page.module.css";
 
-export default function ShowAndSongSelector({ shows, user, defaultShowId }) {
+export default function ShowAndSongSelector({
+  shows,
+  user,
+  defaultShowId,
+  spexId,
+}) {
   const [selectedShowId, setSelectedShowId] = useState(
     parseInt(defaultShowId) || shows[shows.length - 1].id,
   );
@@ -21,7 +26,11 @@ export default function ShowAndSongSelector({ shows, user, defaultShowId }) {
           </button>
         ))}
       </div>
-      <SongSelector showId={selectedShowId} user={user}></SongSelector>
+      <SongSelector
+        showId={selectedShowId}
+        user={user}
+        spexId={spexId}
+      ></SongSelector>
     </div>
   );
 }

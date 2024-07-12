@@ -69,6 +69,16 @@
   border-radius: 10px;
 }
 
+.smallSearchBar {
+  width: 5rem;
+  height: 2rem;
+  padding: 0.5rem;
+  border: none;
+  color: black;
+  background: whitesmoke;
+  border-radius: 10px;
+}
+
 .searchButton {
   height: 2rem;
   width: 5rem;
@@ -202,7 +212,7 @@
   border: 1px solid #838383;
   border-radius: 3px;
 }
-/* CSS */
+
 .button {
   align-items: center;
   background-color: #008f1f;
@@ -217,6 +227,11 @@
   padding: 0.7rem;
   position: relative;
   transition: all 250ms;
+}
+
+#smallButton {
+  padding: 0.3rem;
+  margin-left: 0.5rem;
 }
 
 .button:hover,

@@ -6,6 +6,7 @@ import Link from "next/link";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import LoginButton from "../../components/LoginButton/LoginButton";
 import { Toaster } from "react-hot-toast";
+import { TwoNumberInput } from "../../components/TwoNumberInput/page";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -36,6 +37,8 @@ export default function RootLayout({ children }) {
         </div>
         <main className={styles.main}>
           <SearchBar></SearchBar>
+          <br />
+          <TwoNumberInput></TwoNumberInput>
           {children}
         </main>
       </body>

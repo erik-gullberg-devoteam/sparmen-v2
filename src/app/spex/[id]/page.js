@@ -35,12 +35,15 @@ export default async function Page({ params, searchParams }) {
     <div className={styles.flex}>
       <div className={styles.container}>
         <div className={styles.containerHeader}>
-          <h3>{spex.data[0].name}</h3>
+          <h3>
+            {params.id}. {spex.data[0].name}
+          </h3>
         </div>
         <ShowAndSongSelector
           shows={shows.data}
           user={user}
           defaultShowId={searchParams.show}
+          spexId={params.id}
         ></ShowAndSongSelector>
       </div>
     </div>
